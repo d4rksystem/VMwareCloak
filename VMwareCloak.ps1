@@ -214,23 +214,6 @@ if ($reg) {
     }
 }
 
-<#
-    # Modify VMware Hardware Devicemap Values
-
-    for ($i = 0 ; $i -le 5, $i++)
-    {
-        if (Get-Item -Path "HKLM:\HARDWARE\DEVICEMAP\Scsi\Scsi Port $i\Scsi Bus 0\Target Id 0\Logical Unit Id 0" -Name "Serial" -ErrorAction SilentlyContinue) {
-
-        Write-Output "[*] Modifying Reg Key HKLM:\SOFTWARE\WOW6432Node\RegisteredApplicationss\VMware Host Open"
-        Set-ItemProperty -Path "HKLM:\SOFTWARE\WOW6432Node\RegisteredApplications" -Name "VMware Host Open" -Value "SOFTWARE\Nope, Inc.\NopeOpen\Capabilities"
-
-        } Else {
-
-        Write-Output '[!] Reg Key HKLM:\SOFTWARE\WOW6432Node\RegisteredApplications\VMware Host Open does not seem to exist, or has already been renamed! Skipping this one...'
-        }
-
- #>
-
 # Remove/Rename VMware System Files
 
 if ($files) {
