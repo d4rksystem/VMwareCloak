@@ -10,6 +10,9 @@ The script accomplishes this by doing the following:
 - Deletes VMware driver files (this will not crash your VM, since these drivers are loaded into memory anyway!).
 - Deletes or renames VMware supporting files.
 
+For more info, see my blog post here: 
+https://securityliterate.com/hiding-virtual-machines-from-malware-introducing-vmwarecloak-vboxcloak/
+
 Tested on Windows 7 and Windows 10 - Probably works on Windows XP as well.
 
 Spot any bugs? Let me know!
