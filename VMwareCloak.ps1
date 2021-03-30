@@ -57,7 +57,7 @@ if ($procs) {
         Write-Output '[*] vmtoolsd process killed!'
     }
 
-    if (!$vmtools) {
+    if (!$vmtoolsd) {
         Write-Output '[!] vmtoolsd process does not exist!'
     }
 
