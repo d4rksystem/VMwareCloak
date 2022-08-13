@@ -13,6 +13,8 @@ The script accomplishes this by doing the following:
 For more info, see my blog post here: 
 https://securityliterate.com/hiding-virtual-machines-from-malware-introducing-vmwarecloak-vboxcloak/
 
+Note: This script will not cover ALL VM detection techniques! There are a lot of ways to detect a VM, and many of these cannot be fixed with a simple Powershell script. For example, techniques such as RDTSC and timing detection are not covered, neither is CPUID detection.
+
 Tested on Windows 7 and Windows 10 - Probably works on Windows XP as well.
 
 Spot any bugs? Let me know!
