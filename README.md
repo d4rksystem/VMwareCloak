@@ -21,7 +21,18 @@ Spot any bugs? Let me know!
 
 # Usage
 
-1. Simply run VMwareCloak.ps1 as Administrator on your Windows VMware VM.
+For this script to work, you must execute with System privileges! Administrator privs is usually not enough!
+
+Here is how to do this (using Process Hacker):
+
+1. Start up a PowerShell (powershell.exe) prompt.
+2. Open up Process Hacker.
+3. Right click the PowerShell.exe process and select "Miscellaneous -> Run As".
+4. In the "User Name" drop-down, select "System".
+
+This will spawn a System shell. Now execute the script as normal:
+
+1. Run the script (see usage examples below)
 2. Detonate your malware. Profit.
 3. When done, reset your VM to clean state.
 
