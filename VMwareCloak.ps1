@@ -108,7 +108,7 @@ if ($reg) {
 
      } Else {
 
-        Write-Output '[!] Reg Key HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\VMware User Process does not seem to exist! Skipping this one...'
+        Write-Output '[!] Reg Key HKLM:\HARDWARE\DEVICEMAP\Scsi\Scsi Port 0\Scsi Bus 0\Target Id 0\Logical Unit Id 0\Identifier does not seem to exist! Skipping this one...'
     }
 	
 	if (Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WinSAT" -Name "PrimaryAdapterString" -ErrorAction SilentlyContinue) {
@@ -128,7 +128,7 @@ if ($reg) {
 
      } Else {
 
-        Write-Output '[!] Reg Key HKLM:\HARDWARE\DESCRIPTION\System\BIOS\SystemManufacturer does not seem to exist! Skipping this one...'
+        Write-Output '[!] Reg Key HKLM:\SYSTEM\ControlSet001\Control\SystemInformation\SystemManufacturer does not seem to exist! Skipping this one...'
     }
 	
 	if (Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SystemInformation" -Name "SystemManufacturer" -ErrorAction SilentlyContinue) {
@@ -159,7 +159,7 @@ if ($reg) {
 
      } Else {
 
-        Write-Output '[!] Reg Key HKLM:\HARDWARE\DESCRIPTION\System\BIOS\SystemProductName does not seem to exist! Skipping this one...'
+        Write-Output '[!] Reg Key HKLM:\SYSTEM\ControlSet001\Control\SystemInformation\SystemProductName does not seem to exist! Skipping this one...'
     }
 		
    if (Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" -Name "VMware User Process" -ErrorAction SilentlyContinue) {
