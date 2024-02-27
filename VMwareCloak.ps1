@@ -180,7 +180,16 @@ if ($reg) {
 
         Write-Output '[!] Reg Key HKLM:\SYSTEM\CurrentControlSet\Control\SystemInformation\SystemProductName does not seem to exist! Skipping this one...'
     }
-	
+
+	if (Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\disk\Enum" -Name "0" -ErrorAction SilentlyContinue) {
+
+        Write-Output "[*] Renaming Reg Key HKLM:\SYSTEM\CurrentControlSet\Services\disk\Enum\0..."
+        Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\disk\Enum" -Name "0" -Value  $(Get-RandomString)
+
+     } Else {
+
+        Write-Output '[!] Reg Key HKLM:\SYSTEM\CurrentControlSet\Services\disk\Enum\0 does not seem to exist! Skipping this one...'
+    }	
 	
 	if (Get-ItemProperty -Path "HKLM:\SYSTEM\ControlSet001\Control\SystemInformation" -Name "SystemProductName" -ErrorAction SilentlyContinue) {
 
