@@ -80,7 +80,17 @@ if ($procs) {
 if ($reg) {
 
    # Remove or rename VMware-related registry keys
-   
+
+    if (Get-ItemProperty -Path "HKLM:\HARDWARE\DESCRIPTION\System" -Name "SystemBiosVersion" -ErrorAction SilentlyContinue) {
+
+        Write-Output "[*] Renaming Reg Key HKLM:\HARDWARE\DESCRIPTION\System\SystemBiosVersion..."
+        Set-ItemProperty -Path "HKLM:\HARDWARE\DESCRIPTION\System" -Name "SystemBiosVersion" -Value  $(Get-RandomString)
+
+     } Else {
+
+        Write-Output '[!] Reg Key HKLM:\HARDWARE\DESCRIPTION\System\SystemBiosVersion does not seem to exist! Skipping this one...'
+    }
+
     if (Get-ItemProperty -Path "HKLM:\HARDWARE\DESCRIPTION\System\BIOS" -Name "SystemManufacturer" -ErrorAction SilentlyContinue) {
 
         Write-Output "[*] Renaming Reg Key HKLM:\HARDWARE\DESCRIPTION\System\BIOS\SystemManufacturer..."
@@ -109,6 +119,26 @@ if ($reg) {
      } Else {
 
         Write-Output '[!] Reg Key HKLM:\HARDWARE\DEVICEMAP\Scsi\Scsi Port 0\Scsi Bus 0\Target Id 0\Logical Unit Id 0\Identifier does not seem to exist! Skipping this one...'
+    }
+
+	if (Get-ItemProperty -Path "HKLM:\HARDWARE\DEVICEMAP\Scsi\Scsi Port 1\Scsi Bus 0\Target Id 0\Logical Unit Id 0" -Name "Identifier" -ErrorAction SilentlyContinue) {
+
+        Write-Output "[*] Renaming Reg Key HKLM:\HARDWARE\DEVICEMAP\Scsi\Scsi Port 1\Scsi Bus 0\Target Id 0\Logical Unit Id 0\Identifier..."
+        Set-ItemProperty -Path "HKLM:\HARDWARE\DEVICEMAP\Scsi\Scsi Port 1\Scsi Bus 0\Target Id 0\Logical Unit Id 0" -Name "Identifier" -Value  $(Get-RandomString)
+
+     } Else {
+
+        Write-Output '[!] Reg Key HKLM:\HARDWARE\DEVICEMAP\Scsi\Scsi Port 1\Scsi Bus 0\Target Id 0\Logical Unit Id 0\Identifier does not seem to exist! Skipping this one...'
+    }
+
+	if (Get-ItemProperty -Path "HKLM:\HARDWARE\DEVICEMAP\Scsi\Scsi Port 2\Scsi Bus 0\Target Id 0\Logical Unit Id 0" -Name "Identifier" -ErrorAction SilentlyContinue) {
+
+        Write-Output "[*] Renaming Reg Key HKLM:\HARDWARE\DEVICEMAP\Scsi\Scsi Port 2\Scsi Bus 0\Target Id 0\Logical Unit Id 0\Identifier..."
+        Set-ItemProperty -Path "HKLM:\HARDWARE\DEVICEMAP\Scsi\Scsi Port 2\Scsi Bus 0\Target Id 0\Logical Unit Id 0" -Name "Identifier" -Value  $(Get-RandomString)
+
+     } Else {
+
+        Write-Output '[!] Reg Key HKLM:\HARDWARE\DEVICEMAP\Scsi\Scsi Port 2\Scsi Bus 0\Target Id 0\Logical Unit Id 0\Identifier does not seem to exist! Skipping this one...'
     }
 	
 	if (Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WinSAT" -Name "PrimaryAdapterString" -ErrorAction SilentlyContinue) {
