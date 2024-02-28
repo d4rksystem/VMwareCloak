@@ -61,3 +61,7 @@ Just kill VMware processes:
 - Ensure to make a snapshot of your VM before running this.
 - Using the "files" and/or "procs" command line arguments will likely result in lower VM performance. This is because this script removes several files that are required for supporting functions such as graphics, keyboard input, etc. Just revert VM to clean state if this messes anything up.
 
+# Contributions and Thanks
+
+- Thanks to Takashi Matsumoto (@t-mtsmt) for adding new features and fixing some bugs!
+
