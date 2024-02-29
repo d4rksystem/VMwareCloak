@@ -63,5 +63,5 @@ Just kill VMware processes:
 
 # Contributions and Thanks
 
-- Thanks to Takashi Matsumoto (@t-mtsmt) for adding new features and fixing some bugs!
+- Thanks to Takashi Matsumoto (Twitter/X: @t_mtsmt) for adding new features and fixing some bugs!
 
