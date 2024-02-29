@@ -4,7 +4,7 @@
 ## Many thanks to pafish for some of the ideas - https://github.com/a0rtega/pafish
 ##################################################
 ## Author: d4rksystem (Kyle Cucci)
-## Version: 0.3
+## Version: 0.4
 ##################################################
 
 # Define command line parameters
