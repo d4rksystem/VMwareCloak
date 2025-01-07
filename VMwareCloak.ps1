@@ -91,6 +91,26 @@ if ($reg) {
         Write-Output '[!] Reg Key HKLM:\HARDWARE\DESCRIPTION\System\SystemBiosVersion does not seem to exist! Skipping this one...'
     }
 
+    if (Get-ItemProperty -Path "HKLM:\HARDWARE\DESCRIPTION\System\BIOS" -Name "BIOSVendor" -ErrorAction SilentlyContinue) {
+
+        Write-Output "[*] Renaming Reg Key HKLM:\HARDWARE\DESCRIPTION\System\BIOS\BIOSVendor..."
+	Set-ItemProperty -Path "HKLM:\HARDWARE\DESCRIPTION\System\BIOS" -Name "BIOSVendor" -Value "American Megatrends International, LLC."
+
+     } Else {
+
+        Write-Output '[!] Reg Key HKLM:\HARDWARE\DESCRIPTION\System\BIOS\BIOSVendor does not seem to exist! Skipping this one...'
+    }
+
+    if (Get-ItemProperty -Path "HKLM:\HARDWARE\DESCRIPTION\System\BIOS" -Name "BIOSVersion" -ErrorAction SilentlyContinue) {
+
+        Write-Output "[*] Renaming Reg Key HKLM:\HARDWARE\DESCRIPTION\System\BIOS\BIOSVendor..."
+        Set-ItemProperty -Path "HKLM:\HARDWARE\DESCRIPTION\System\BIOS" -Name "BIOSVersion" -Value  1.70
+
+     } Else {
+
+        Write-Output '[!] Reg Key HKLM:\HARDWARE\DESCRIPTION\System\BIOS\BIOSVersion does not seem to exist! Skipping this one...'
+    }
+
     if (Get-ItemProperty -Path "HKLM:\HARDWARE\DESCRIPTION\System\BIOS" -Name "SystemManufacturer" -ErrorAction SilentlyContinue) {
 
         Write-Output "[*] Renaming Reg Key HKLM:\HARDWARE\DESCRIPTION\System\BIOS\SystemManufacturer..."
