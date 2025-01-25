@@ -64,4 +64,5 @@ Just kill VMware processes:
 # Contributions and Thanks
 
 - Thanks to Takashi Matsumoto (Twitter/X: @t_mtsmt) for adding new features and fixing some bugs!
+- Thanks to MMJv3 (https://github.com/MMJv3) for adding new registry key changes!
 
