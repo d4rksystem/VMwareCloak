@@ -81,6 +81,36 @@ if ($reg) {
 
    # Remove or rename VMware-related registry keys
 
+    if (Get-ItemProperty -Path "HKLM:\HARDWARE\DEVICEMAP\Scsi\Scsi Port 3\Scsi Bus 1\Target Id 0\Logical Unit Id 0\" -Name "Identifier" -ErrorAction SilentlyContinue) {
+
+        Write-Output "[*] Renaming Reg Key HKLM:\HARDWARE\DEVICEMAP\Scsi\Scsi Port 3\Scsi Bus 1\Target Id 0\Logical Unit Id 0\Identifier"
+        Set-ItemProperty -Path "HKLM:\HARDWARE\DEVICEMAP\Scsi\Scsi Port 3\Scsi Bus 1\Target Id 0\Logical Unit Id 0\" -Name "Identifier" -Value  $(Get-RandomString)
+
+     } Else {
+
+        Write-Output '[!] Reg Key HKLM:\HARDWARE\DEVICEMAP\Scsi\Scsi Port 3\Scsi Bus 1\Target Id 0\Logical Unit Id 0\Identifier" does not seem to exist! Skipping this one...'
+    }
+
+    if (Get-ItemProperty -Path "HKLM:\SYSTEM\ControlSet001\Control\Class\{4d36e97d-e325-11ce-bfc1-08002be10318}\0133\" -Name "DriverDesc" -ErrorAction SilentlyContinue) {
+
+        Write-Output "[*] Renaming Reg Key HKLM:\SYSTEM\ControlSet001\Control\Class\{4d36e97d-e325-11ce-bfc1-08002be10318}\0133\DriverDesc"
+        Set-ItemProperty -Path "HKLM:\SYSTEM\ControlSet001\Control\Class\{4d36e97d-e325-11ce-bfc1-08002be10318}\0133\" -Name "DriverDesc" -Value  $(Get-RandomString)
+
+     } Else {
+
+        Write-Output '[!] Reg Key HKLM:\SYSTEM\ControlSet001\Control\Class\{4d36e97d-e325-11ce-bfc1-08002be10318}\0133\DriverDesc does not seem to exist! Skipping this one...'
+    }
+
+    if (Get-ItemProperty -Path "HKLM:\SYSTEM\ControlSet001\Control\Class\{4d36e97d-e325-11ce-bfc1-08002be10318}\0133\" -Name "InfSection" -ErrorAction SilentlyContinue) {
+
+        Write-Output "[*] Renaming Reg Key HKLM:SYSTEM\ControlSet001\Control\Class\{4d36e97d-e325-11ce-bfc1-08002be10318}\0133\InfSection"
+        Set-ItemProperty -Path "HKLM:\SYSTEM\ControlSet001\Control\Class\{4d36e97d-e325-11ce-bfc1-08002be10318}\0133\" -Name "InfSection" -Value  $(Get-RandomString)
+
+     } Else {
+
+        Write-Output '[!] Reg Key HKLM:\SYSTEM\ControlSet001\Control\Class\{4d36e97d-e325-11ce-bfc1-08002be10318}\0133\InfSection does not seem to exist! Skipping this one...'
+    }
+
     if (Get-ItemProperty -Path "HKLM:\HARDWARE\DESCRIPTION\System" -Name "SystemBiosVersion" -ErrorAction SilentlyContinue) {
 
         Write-Output "[*] Renaming Reg Key HKLM:\HARDWARE\DESCRIPTION\System\SystemBiosVersion..."
@@ -89,6 +119,26 @@ if ($reg) {
      } Else {
 
         Write-Output '[!] Reg Key HKLM:\HARDWARE\DESCRIPTION\System\SystemBiosVersion does not seem to exist! Skipping this one...'
+    }
+
+    if (Get-ItemProperty -Path "HKLM:\HARDWARE\DESCRIPTION\System\BIOS" -Name "BIOSVendor" -ErrorAction SilentlyContinue) {
+
+        Write-Output "[*] Renaming Reg Key HKLM:\HARDWARE\DESCRIPTION\System\BIOS\BIOSVendor..."
+	Set-ItemProperty -Path "HKLM:\HARDWARE\DESCRIPTION\System\BIOS" -Name "BIOSVendor" -Value "American Megatrends International, LLC."
+
+     } Else {
+
+        Write-Output '[!] Reg Key HKLM:\HARDWARE\DESCRIPTION\System\BIOS\BIOSVendor does not seem to exist! Skipping this one...'
+    }
+
+    if (Get-ItemProperty -Path "HKLM:\HARDWARE\DESCRIPTION\System\BIOS" -Name "BIOSVersion" -ErrorAction SilentlyContinue) {
+
+        Write-Output "[*] Renaming Reg Key HKLM:\HARDWARE\DESCRIPTION\System\BIOS\BIOSVersion..."
+        Set-ItemProperty -Path "HKLM:\HARDWARE\DESCRIPTION\System\BIOS" -Name "BIOSVersion" -Value  1.70
+
+     } Else {
+
+        Write-Output '[!] Reg Key HKLM:\HARDWARE\DESCRIPTION\System\BIOS\BIOSVersion does not seem to exist! Skipping this one...'
     }
 
     if (Get-ItemProperty -Path "HKLM:\HARDWARE\DESCRIPTION\System\BIOS" -Name "SystemManufacturer" -ErrorAction SilentlyContinue) {
